@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">앱사이트</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_app_site">AppSite</string>
+    <string name="img_desc_intro">Intro Image</string>
+    <string name="intro_title">Android App-Site</string>
+    <string name="slogan">Think of new generation\n새로운 생각을 하는 사람들</string>
+    <string name="info">아울연구소(OWLLAB)\n이두진 소장 / 연구원: 권정섭, 박종산\nhttp://www.owllab.com owl@owl.co.kr \n000–0000–0000</string>
+
+</resources>

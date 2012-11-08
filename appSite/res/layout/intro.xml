@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/img_desc_intro"
+        android:drawingCacheQuality="high"
+        android:src="@drawable/app_mark" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="15dp"
+        android:shadowColor="#999999"
+        android:shadowRadius="5"
+        android:text="@string/intro_title"
+        android:textColor="#367b11"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:paddingBottom="10dp"
+        android:text="@string/slogan"
+        android:textColor="#e03001"
+        android:textSize="12dp"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:gravity="left"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:lineSpacingExtra="0dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:text="@string/info"
+        android:textColor="#555555"
+        android:textSize="11dp"
+        android:textStyle="normal|italic" />
+
+</LinearLayout>
