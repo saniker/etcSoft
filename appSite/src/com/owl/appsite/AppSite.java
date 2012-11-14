@@ -3,6 +3,8 @@ package com.owl.appsite;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class AppSite extends Activity {
@@ -12,9 +14,11 @@ public class AppSite extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro);
 
-//        ImageView image = new ImageView(this);
-//        image.setImageResource(R.drawable.app_mark);
-//        setContentView(image);
+        // alpha animation Àû¿ë
+
+        ImageView image = (ImageView) findViewById(R.id.img_app_mark);
+        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        image.startAnimation(alphaAnim);
     }
 
     @Override
