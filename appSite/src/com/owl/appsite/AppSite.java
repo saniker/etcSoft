@@ -14,10 +14,10 @@ public class AppSite extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro);
 
-        // alpha animation 적용
+        // alpha, scale animation 적용
 
         ImageView image = (ImageView) findViewById(R.id.img_app_mark);
-        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.alpha);
+        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.tween);
         image.startAnimation(alphaAnim);
     }
 
