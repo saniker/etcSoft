@@ -10,6 +10,7 @@ package com.owl.appsite;
 public final class R {
     public static final class anim {
         public static final int alpha=0x7f040000;
+        public static final int alpha_acc=0x7f040001;
     }
     public static final class attr {
     }
