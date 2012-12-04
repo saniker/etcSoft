@@ -4,9 +4,11 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:layoutAnimation="@anim/layout_anim">
 
-    <ImageView
+    <ImageButton
+        android:background="#00000000"
         android:id="@+id/img_app_mark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +41,9 @@
         android:textSize="12dp"
         android:textStyle="bold|italic" />
 
-    <ImageView android:id="@+id/anim_bg"
+    <ImageButton
+        android:background="#00000000"
+        android:id="@+id/anim_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"/>

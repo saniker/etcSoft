@@ -4,11 +4,12 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class AppSite extends Activity {
@@ -20,9 +21,23 @@ public class AppSite extends Activity {
 
         // alpha, scale animation Àû¿ë
 
-        ImageView image = (ImageView) findViewById(R.id.img_app_mark);
-        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.tween);
-        image.startAnimation(alphaAnim);
+        ImageButton imgBtn1 = (ImageButton) findViewById(R.id.img_app_mark);
+        imgBtn1.setOnClickListener(new ImageButton.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AppSite.this, MainSite.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton imgBtn2 = (ImageButton) findViewById(R.id.anim_bg);
+        imgBtn2.setOnClickListener(new ImageButton.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AppSite.this, MainSite.class);
+                startActivity(intent);
+            }
+        });
+//        Animation alphaAnim = AnimationUtils.loadAnimation(this, R.anim.tween);
+//        image.startAnimation(alphaAnim);
 
         // frame animation
 
