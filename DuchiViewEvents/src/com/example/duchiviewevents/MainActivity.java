@@ -1,9 +1,15 @@
 package com.example.duchiviewevents;
 
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.Menu;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -25,6 +31,51 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		}
 	};
 	
+	public class MyView extends View {
+		int x=100, y=100;
+		String str;
+		
+		public MyView(Context context){
+			super(context);
+			setBackgroundColor(Color.YELLOW);
+		}
+
+		@Override
+		protected void onDraw(Canvas canvas) {
+			// TODO Auto-generated method stub
+			super.onDraw(canvas);
+			
+			Paint paint = new Paint();
+			paint.setColor(Color.MAGENTA);
+			canvas.drawRect(x, y, x+50, y+50, paint);
+			canvas.drawText("Action type: "+str, 0, 20, paint);
+		}
+
+		@Override
+		public boolean onTouchEvent(MotionEvent event) {
+			// TODO Auto-generated method stub
+			
+			x = (int)event.getX();
+			y = (int)event.getY();
+			
+			if(event.getAction() == MotionEvent.ACTION_DOWN) {
+				str = "ACTION_DOWN";
+			}
+			
+			if(event.getAction() == MotionEvent.ACTION_MOVE) {
+				str = "ACTION_MOVE";
+			}
+			
+			if(event.getAction() == MotionEvent.ACTION_UP) {
+				str = "ACTION_UP";
+			}
+			
+			invalidate();
+			
+			return true;
+		}		
+	}
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -38,6 +89,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		final ToggleButton tbtn = (ToggleButton)findViewById(R.id.button3);
 		final RatingBar ratebar = (RatingBar)findViewById(R.id.ratingBar1);
 		final Button custombtn = (Button)findViewById(R.id.button4);
+		final Button movebtn = (Button)findViewById(R.id.button5);
 
 		// 1. button onclick event
 		button.setOnClickListener(this);
@@ -105,9 +157,59 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getApplicationContext(), "Beep Bop:", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "Beep Bop", Toast.LENGTH_SHORT).show();
 			}
 		});
+		
+		// 8. touch event
+		/*
+		MyView w = new MyView(this);
+		setContentView(w);
+		*/
+		
+		movebtn.setOnTouchListener(new View.OnTouchListener() {
+			
+			@SuppressLint("NewApi")
+			@Override
+			public boolean onTouch(View v, MotionEvent event) {
+				// TODO Auto-generated method stub
+				
+//				if(event.getAction() == MotionEvent.ACTION_UP) {
+//					movebtn.setX(event.getX());
+//					movebtn.setY(event.getY());
+//				}
+				
+				movebtn.setX(event.getX());
+				movebtn.setY(event.getY());
+				
+				return false;
+			}
+		});
+	}
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		int x, y;
+		String str = "";
+		
+		x = (int)event.getX();
+		y = (int)event.getY();
+		
+		if(event.getAction() == MotionEvent.ACTION_DOWN) {
+			str = "ACTION_DOWN";
+		}
+		
+		if(event.getAction() == MotionEvent.ACTION_MOVE) {
+			str = "ACTION_MOVE";
+		}
+		
+		if(event.getAction() == MotionEvent.ACTION_UP) {
+			str = "ACTION_UP";
+		}
+		
+		Toast.makeText(getApplicationContext(), "Action type:"+str+" , "+x+", "+y, Toast.LENGTH_SHORT).show();
+		
+		return true;
 	}
 
 	@Override
