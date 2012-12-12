@@ -75,6 +75,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		red.setOnClickListener(radio_listener);
 		blue.setOnClickListener(radio_listener);
 		
+		
 		// 5. toggle button
 		tbtn.setOnClickListener(new View.OnClickListener() {
 			
